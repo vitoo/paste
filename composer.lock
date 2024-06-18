@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7e8c3c14ff33b199b4a0838993eb8423",
+    "content-hash": "21da19545158c065db3cb7d73d277ff6",
     "packages": [
         {
             "name": "brick/math",
@@ -5865,6 +5865,69 @@
             "time": "2020-07-09T08:09:16+00:00"
         },
         {
+            "name": "laravel/envoy",
+            "version": "v2.9.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/envoy.git",
+                "reference": "a9b9da0fb5eb6625d90a164b828e94ab81472eb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/envoy/zipball/a9b9da0fb5eb6625d90a164b828e94ab81472eb2",
+                "reference": "a9b9da0fb5eb6625d90a164b828e94ab81472eb2",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.0|^7.0",
+                "illuminate/support": "^6.0|^7.0|^8.0|^9.0|^10.0|^11.0",
+                "php": "^7.2|^8.0",
+                "symfony/console": "^4.3|^5.0|^6.0|^7.0",
+                "symfony/process": "^4.3|^5.0|^6.0|^7.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^1.10",
+                "phpunit/phpunit": "^8.0|^9.0|^10.4"
+            },
+            "suggest": {
+                "ext-posix": "Required to determine the System user on Unix systems."
+            },
+            "bin": [
+                "bin/envoy"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laravel\\Envoy\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylor@laravel.com"
+                }
+            ],
+            "description": "Elegant SSH tasks for PHP.",
+            "keywords": [
+                "laravel",
+                "ssh"
+            ],
+            "support": {
+                "issues": "https://github.com/laravel/envoy/issues",
+                "source": "https://github.com/laravel/envoy/tree/v2.9.0"
+            },
+            "time": "2024-01-16T17:18:44+00:00"
+        },
+        {
             "name": "laravel/pint",
             "version": "v1.16.0",
             "source": {
@@ -6676,16 +6739,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "11.2.2",
+            "version": "11.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "3e1843a58adc9c433ee6170bdee7d615f7ccc20b"
+                "reference": "1b8775732e9c401bda32df3ffbdf90dec7533ceb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3e1843a58adc9c433ee6170bdee7d615f7ccc20b",
-                "reference": "3e1843a58adc9c433ee6170bdee7d615f7ccc20b",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1b8775732e9c401bda32df3ffbdf90dec7533ceb",
+                "reference": "1b8775732e9c401bda32df3ffbdf90dec7533ceb",
                 "shasum": ""
             },
             "require": {
@@ -6756,7 +6819,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.2.2"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.2.1"
             },
             "funding": [
                 {
@@ -6772,7 +6835,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-06-15T09:14:53+00:00"
+            "time": "2024-06-11T07:30:35+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -7212,16 +7275,16 @@
         },
         {
             "name": "sebastian/exporter",
-            "version": "6.1.1",
+            "version": "6.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "7eb922f18c8a13f6761772ae5ee47032a4d33d62"
+                "reference": "f291e5a317c321c0381fa9ecc796fa2d21b186da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/7eb922f18c8a13f6761772ae5ee47032a4d33d62",
-                "reference": "7eb922f18c8a13f6761772ae5ee47032a4d33d62",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/f291e5a317c321c0381fa9ecc796fa2d21b186da",
+                "reference": "f291e5a317c321c0381fa9ecc796fa2d21b186da",
                 "shasum": ""
             },
             "require": {
@@ -7230,12 +7293,12 @@
                 "sebastian/recursion-context": "^6.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^11.2"
+                "phpunit/phpunit": "^11.0"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "6.1-dev"
+                    "dev-main": "6.0-dev"
                 }
             },
             "autoload": {
@@ -7278,7 +7341,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/exporter/issues",
                 "security": "https://github.com/sebastianbergmann/exporter/security/policy",
-                "source": "https://github.com/sebastianbergmann/exporter/tree/6.1.1"
+                "source": "https://github.com/sebastianbergmann/exporter/tree/6.0.1"
             },
             "funding": [
                 {
@@ -7286,7 +7349,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-18T06:31:36+00:00"
+            "time": "2024-03-02T07:28:20+00:00"
         },
         {
             "name": "sebastian/global-state",
@@ -7524,16 +7587,16 @@
         },
         {
             "name": "sebastian/recursion-context",
-            "version": "6.0.1",
+            "version": "6.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/recursion-context.git",
-                "reference": "2f15508e17af4ea35129bbc32ce28a814d9c7426"
+                "reference": "b75224967b5a466925c6d54e68edd0edf8dd4ed4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/2f15508e17af4ea35129bbc32ce28a814d9c7426",
-                "reference": "2f15508e17af4ea35129bbc32ce28a814d9c7426",
+                "url": "https://api.github.com/repos/sebastianbergmann/recursion-context/zipball/b75224967b5a466925c6d54e68edd0edf8dd4ed4",
+                "reference": "b75224967b5a466925c6d54e68edd0edf8dd4ed4",
                 "shasum": ""
             },
             "require": {
@@ -7576,7 +7639,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/recursion-context/issues",
                 "security": "https://github.com/sebastianbergmann/recursion-context/security/policy",
-                "source": "https://github.com/sebastianbergmann/recursion-context/tree/6.0.1"
+                "source": "https://github.com/sebastianbergmann/recursion-context/tree/6.0.0"
             },
             "funding": [
                 {
@@ -7584,7 +7647,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-06-17T05:22:57+00:00"
+            "time": "2024-02-02T06:08:48+00:00"
         },
         {
             "name": "sebastian/type",

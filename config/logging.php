@@ -54,7 +54,7 @@ return [
 
         'stack' => [
             'driver' => 'stack',
-            'channels' => explode(',', env('LOG_STACK', 'single')),
+            'channels' => env('LOG_SLACK_WEBHOOK_URL') ? ['single', 'slack_deduplicated'] : ['single'],
             'ignore_exceptions' => false,
         ],
 
@@ -80,6 +80,15 @@ return [
             'emoji' => env('LOG_SLACK_EMOJI', ':boom:'),
             'level' => env('LOG_LEVEL', 'critical'),
             'replace_placeholders' => true,
+        ],
+
+        'slack_deduplicated' => [
+            'driver' => 'custom',
+            'via' => App\Logging\SlackDeduplicatedLogger::class,
+            'url' => env('LOG_SLACK_WEBHOOK_URL'),
+            'username' => 'Log',
+            'emoji' => ':boom:',
+            'time' => 3600, //60 minutes
         ],
 
         'papertrail' => [
