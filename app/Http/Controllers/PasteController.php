@@ -20,6 +20,8 @@ class PasteController extends Controller
             'expiration' => 'in:1day,1week,1month,1year,never',
         ]);
 
+        $truncatedContent = Str::limit($validatedData['content'], 65000, ''); 
+
         //unique slug
         $slug = Str::random(8);
         while (Paste::where('slug', $slug)->exists()) {
@@ -36,7 +38,7 @@ class PasteController extends Controller
         };
 
         $paste = new Paste();
-        $paste->content = $validatedData['content'];
+        $paste->content = $truncatedContent;
         $paste->slug = $slug;
         $paste->expired_at = $expiredAt;
         $paste->save();

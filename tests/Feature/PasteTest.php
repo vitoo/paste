@@ -69,4 +69,18 @@ class PasteTest extends TestCase
             'id' => $paste->id,
         ]);
     }
+
+    function test_long_content_is_truncated_when_creating_paste()
+    {
+        $longContent = str_repeat('a', 70000); // Create a string that's longer than our limit
+
+        $response = $this->post(route('pastes.store'), [
+            'content' => $longContent,
+            'expiration' => '1day',
+        ]);
+        $response->assertRedirect();
+        $contentCreated = Paste::first()->content;
+        $this->assertEquals(65000, strlen($contentCreated));
+        $this->assertEquals(str_repeat('a', 65000),  $contentCreated);
+    }
 }
