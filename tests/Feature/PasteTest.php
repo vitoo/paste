@@ -5,7 +5,10 @@ namespace Tests\Feature;
 // use Illuminate\Foundation\Testing\RefreshDatabase;
 
 use App\Models\Paste;
+use Illuminate\Console\Events\ScheduledTaskFinished;
 use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
+use Illuminate\Support\Facades\Date;
+use Illuminate\Support\Facades\Event;
 use Tests\TestCase;
 
 class PasteTest extends TestCase
@@ -68,6 +71,27 @@ class PasteTest extends TestCase
         $this->assertDatabaseMissing('pastes', [
             'id' => $paste->id,
         ]);
+    }
+
+    public function test_command_is_run_by_scheduler_at_midnight()
+    {
+        Event::fake();
+        Paste::factory()->create([
+            'expired_at' => now()->subDay(2),
+        ]);
+
+        //travel to midnight 
+        $this->travelTo(now()->startOfDay());
+        $this->artisan('schedule:run');
+        Event::assertDispatched(ScheduledTaskFinished::class, function ($event) {
+            return strpos($event->task->command, 'delete-expired-pastes') !== false;
+        });
+        //1 am
+        $this->travelTo(now()->hour(1));
+        $this->artisan('schedule:run');
+        Event::assertNotDispatched(ScheduledTaskFinished::class, function ($event) {
+            return strpos($event->task->command, 'delete-expired-pastes') === false;
+        });
     }
 
     function test_long_content_is_truncated_when_creating_paste()
