@@ -14,7 +14,7 @@
                             <textarea name="content" id="content" rows="15" class="form-control" required></textarea>
                         </div>
                         <div class="mb-3">
-                            <label for="expiration" class="form-label">Duration :</label>
+                            <label for="expiration" class="form-label">Expiration :</label>
                             <select name="expiration" id="expiration" class="form-select" required>
                                 <option value="1day">1 Day</option>
                                 <option value="1week">1 Week</option>
